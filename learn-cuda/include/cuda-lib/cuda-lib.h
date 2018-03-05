@@ -1,1 +1,1 @@
-#include "../../src/cuda-lib"
+#include "../../src/cuda-lib/cuda-lib.h"

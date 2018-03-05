@@ -56,7 +56,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;C:\qt\592\5.9.2\msvc2017_64\include;C:\qt\592\5.9.2\msvc2017_64\include\QtWidgets;C:\qt\592\5.9.2\msvc2017_64\include\QtGui;C:\qt\592\5.9.2\msvc2017_64\include\QtANGLE;C:\qt\592\5.9.2\msvc2017_64\include\QtCore;release;.;C:\qt\592\5.9.2\msvc2017_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;C:\qt\592\5.9.2\msvc2017_64\include;C:\qt\592\5.9.2\msvc2017_64\include\QtWidgets;C:\qt\592\5.9.2\msvc2017_64\include\QtGui;C:\qt\592\5.9.2\msvc2017_64\include\QtANGLE;C:\qt\592\5.9.2\msvc2017_64\include\QtCore;release;C:\qt\592\5.9.2\msvc2017_64\mkspecs\win32-msvc;$(ProjectDir)../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>release\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>
@@ -98,7 +98,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;C:\qt\592\5.9.2\msvc2017_64\include;C:\qt\592\5.9.2\msvc2017_64\include\QtWidgets;C:\qt\592\5.9.2\msvc2017_64\include\QtGui;C:\qt\592\5.9.2\msvc2017_64\include\QtANGLE;C:\qt\592\5.9.2\msvc2017_64\include\QtCore;debug;.;C:\qt\592\5.9.2\msvc2017_64\mkspecs\win32-msvc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;C:\qt\592\5.9.2\msvc2017_64\include;C:\qt\592\5.9.2\msvc2017_64\include\QtWidgets;C:\qt\592\5.9.2\msvc2017_64\include\QtGui;C:\qt\592\5.9.2\msvc2017_64\include\QtANGLE;C:\qt\592\5.9.2\msvc2017_64\include\QtCore;debug;C:\qt\592\5.9.2\msvc2017_64\mkspecs\win32-msvc;$(ProjectDir)../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>-Zc:rvalueCast -Zc:inline -Zc:strictStrings -Zc:throwingNew -w34100 -w34189 -w44996 -w44456 -w44457 -w44458 %(AdditionalOptions)</AdditionalOptions>
       <AssemblerListingLocation>debug\</AssemblerListingLocation>
       <BrowseInformation>false</BrowseInformation>

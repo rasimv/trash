@@ -2,6 +2,7 @@
 #include "device_launch_parameters.h"
 
 #include <stdio.h>
+#include "cuda-lib.h"
 
 cudaError_t addWithCuda(int *c, const int *a, const int *b, unsigned int size);
 
@@ -11,7 +12,7 @@ __global__ void addKernel(int *c, const int *a, const int *b)
     c[i] = a[i] + b[i];
 }
 
-int main()
+int xmain()
 {
     const int arraySize = 5;
     const int a[arraySize] = { 1, 2, 3, 4, 5 };
