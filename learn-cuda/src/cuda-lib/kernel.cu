@@ -129,3 +129,8 @@ Error:
     
     return cudaStatus;
 }
+
+double func(int a)
+{
+    return a + 1;
+}
