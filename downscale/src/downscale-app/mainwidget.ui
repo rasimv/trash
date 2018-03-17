@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Downscale red</string>
+   <string>Downscale ARGB</string>
   </property>
   <widget class="QPushButton" name="pushButton_loadImage">
    <property name="geometry">
@@ -88,7 +88,7 @@
     <string>New height</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton_downscaleRed">
+  <widget class="QPushButton" name="pushButton_downscale">
    <property name="geometry">
     <rect>
      <x>252</x>
@@ -98,7 +98,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>Downscale red...</string>
+    <string>Downscale...</string>
    </property>
   </widget>
  </widget>

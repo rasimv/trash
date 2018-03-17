@@ -19,10 +19,10 @@ public:
 
 private slots:
     void on_pushButton_loadImage_clicked();
-    void on_pushButton_downscaleRed_clicked();
+    void on_pushButton_downscale_clicked();
 
 private:
-    static QImage downscaleRed(const QImage &a_source, int a_newWidth, int a_newHeight);
+    static QImage downscale(const QImage &a_source, int a_newWidth, int a_newHeight);
 
     Ui::MainWidget *ui;
     QImage m_image;

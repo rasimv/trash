@@ -31,7 +31,7 @@ void MainWidget::on_pushButton_loadImage_clicked()
     ui->label_loaded->setText(QString("%1x%2").arg(m_image.width()).arg(m_image.height()));
 }
 
-void MainWidget::on_pushButton_downscaleRed_clicked()
+void MainWidget::on_pushButton_downscale_clicked()
 {
     const int l_newWidth = ui->lineEdit_newWidth->text().toInt(),
               l_newHeight = ui->lineEdit_newHeight->text().toInt();
@@ -48,28 +48,38 @@ void MainWidget::on_pushButton_downscaleRed_clicked()
                                                           windowTitle() + " - Save image to file...",
                                                           "",
                                                           "Images (*.png)"));
-    QImage l_result(downscaleRed(m_image, l_newWidth, l_newHeight));
+    QImage l_result(downscale(m_image, l_newWidth, l_newHeight));
     l_result.save(l_filepath);
 }
 
-QImage MainWidget::downscaleRed(const QImage &a_source, int a_newWidth, int a_newHeight)
+QImage MainWidget::downscale(const QImage &a_source, int a_newWidth, int a_newHeight)
 {
-    std::vector<uint16_t> l_s(a_source.width() * a_source.height());
-    for (int i = 0; i < a_source.height(); i++)
-        for (int j = 0; j < a_source.width(); j++)
-        {
-            const QColor l_col(a_source.pixelColor(j, i));
-            l_s[j + i * a_source.width()] = l_col.red();
-        }
+    QImage l_result(a_newWidth, a_newHeight, QImage::Format_ARGB32);
+    int (QColor::*const l_get[])() const =
+        { &QColor::alpha, &QColor::red, &QColor::green, &QColor::blue };
+    void (QColor::*const l_set[])(int) =
+        { &QColor::setAlpha, &QColor::setRed, &QColor::setGreen, &QColor::setBlue };
 
+    std::vector<uint16_t> l_s(a_source.width() * a_source.height());
     std::vector<uint16_t> l_d(a_newWidth * a_newHeight);
-    ::downscale(l_s, a_source.width(), a_source.height(), l_d, a_newWidth, a_newHeight);
-    QImage l_result(a_newWidth, a_newHeight, QImage::Format_RGB32);
-    for (int i = 0; i < l_result.height(); i++)
-        for (int j = 0; j < l_result.width(); j++)
-        {
-            const auto l_red = l_d[j + i * l_result.width()];
-            l_result.setPixelColor(j, i, QColor(l_red, 0, 0));
-        }
+    for (auto q(std::begin(l_get)); q != std::end(l_get); q++)
+    {
+        for (int i = 0; i < a_source.height(); i++)
+            for (int j = 0; j < a_source.width(); j++)
+            {
+                const QColor l_col(a_source.pixelColor(j, i));
+                l_s[j + i * a_source.width()] = (l_col.*l_get[std::distance(std::begin(l_get), q)])();
+            }
+
+        ::downscale(l_s, a_source.width(), a_source.height(), l_d, a_newWidth, a_newHeight);
+        for (int i = 0; i < l_result.height(); i++)
+            for (int j = 0; j < l_result.width(); j++)
+            {
+                QColor l_col(l_result.pixelColor(j, i));
+                (l_col.*l_set[std::distance(std::begin(l_get), q)])(l_d[j + i * l_result.width()]);
+                l_result.setPixelColor(j, i, l_col);
+            }
+    }
+
     return l_result;
 }
