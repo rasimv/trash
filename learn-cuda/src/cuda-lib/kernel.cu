@@ -133,5 +133,6 @@ Error:
 
 double func(int a)
 {
+    xmain();
     return a + 1;
 }
