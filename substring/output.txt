@@ -1,38 +1,26 @@
-v1: 6.4 s, v2: 5.3 s
+v1 (set, string): 7994302 - 3.9 s
+v1 (set, string_view): 7994302 - 1.74 s
+v1 (unordered_set, string): 7994302 - 13.31 s
+v1 (unordered_set, string_view): 7994302 - 12.23 s
+v2 (set, string): 7994302 - 6.82 s
+v2 (set, string_view): 7994302 - 4.39 s
+v2 (unordered_set, string): 7994302 - 27.98 s
+v2 (unordered_set, string_view): 7994302 - 25.13 s
 
-v1: 5.8 s, v2: 5.3 s
+v1 (set, string): 7994304 - 2.8 s
+v1 (set, string_view): 7994304 - 1.77 s
+v1 (unordered_set, string): 7994304 - 13.3 s
+v1 (unordered_set, string_view): 7994304 - 12.24 s
+v2 (set, string): 7994304 - 6.56 s
+v2 (set, string_view): 7994304 - 4.38 s
+v2 (unordered_set, string): 7994304 - 27.82 s
+v2 (unordered_set, string_view): 7994304 - 25.09 s
 
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.7 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.7 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.9 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.7 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.9 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
-v1: 5.8 s, v2: 5.3 s
-
+v1 (set, string): 7994283 - 2.72 s
+v1 (set, string_view): 7994283 - 1.74 s
+v1 (unordered_set, string): 7994283 - 13.3 s
+v1 (unordered_set, string_view): 7994283 - 12.27 s
+v2 (set, string): 7994283 - 6.81 s
+v2 (set, string_view): 7994283 - 4.39 s
+v2 (unordered_set, string): 7994283 - 27.63 s
+v2 (unordered_set, string_view): 7994283 - 25.09 s
